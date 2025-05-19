@@ -1,6 +1,6 @@
 // src/App.tsx
 import './index.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'; // ✅ change here
 import Home from './pages/Home';
 import Project1 from './pages/Project1';
 import Project2 from './pages/Project2';
