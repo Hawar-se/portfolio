@@ -17,6 +17,7 @@ import Image4 from '../assets/me.png';
 import Image1 from '../assets/Gotogrowth.png';
 import Image2 from '../assets/n-logo.png';
 import Image3 from '../assets/u.png'
+import Image5 from '../assets/react.png'
 import ProjectCard from '../components/ProjectCard';
 
 
@@ -38,14 +39,14 @@ const Home = () => {
       description: 'A UX case study for an AI-powered research assistant'
     },
     {
-      title: 'Mobile First Website',
+      title: 'Unicontrol Application',
       image: Image3,
       link: '/project4',
       description: 'GoToGrowth website and Brand Identity',
     },
      {
-      title: 'Mobile First Website',
-      image: Image3,
+      title: 'Skill Refresh Projects',
+      image: Image5,
       link: '/project3',
       description: 'GoToGrowth website and Brand Identity',
     },
@@ -122,10 +123,9 @@ const Home = () => {
         color="text.secondary"
         sx={{ lineHeight: 1.8, mb: 4, fontSize: { xs: '1rem', md: '1.125rem' } }}
       >
-        I am a passionate UI/UX designer and front-end developer.<br />
-        I craft intuitive and engaging digital experiences with creativity and attention to detail.<br />
-        Beyond skills, I bring positivity, adaptability, and a collaborative spirit to every project.<br />
-        Let’s build something great together.
+       UI/UX-focused front-end developer passionate about clean code and clean design.
+I blend technical expertise with design intuition to craft user-centered web experiences.
+Let’s build something that not only works great, but feels great to use.
       </Typography>
       <Link smooth to="/#about" style={{ textDecoration: 'none' }}>
         <Button
@@ -236,11 +236,21 @@ const Home = () => {
       to help turn concepts into reality. Let’s create something impactful together.
     </Typography>
       {/* New personal text + CV link */}
-      <Typography variant="body2" color="text.primary" sx={{ mb: 2 }}>
+      <Typography variant="body1"
+      color="text.secondary"
+      sx={{ lineHeight: 1.8, fontSize: '1.125rem' }}>
       Outside of work, I’m passionate about continuous learning, exploring new technologies, and collaborating with diverse teams.
       Feel free to check out my CV for more about my experience and skills.
     </Typography>
-    <Button
+
+    <Typography
+      variant="body1"
+      color="text.secondary"
+      sx={{ lineHeight: 1.8, fontSize: '1.125rem' }}>
+    🌿 Personal Interests
+Beyond coding, I find joy in nurturing my backyard garden and caring for my chickens, activities that instill a sense of responsibility and mindfulness. Pilates sessions keep me grounded and focused, enhancing my overall well-being. Additionally, I volunteer at a local swimming program for children, where I assist in teaching and supervising, reflecting my commitment to community engagement and teamwork.
+</Typography>   
+<Button
       variant="outlined"
       color="primary"
       href="Hawar-cv.pdf"

@@ -1,6 +1,6 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Typography, Link, Divider, Card, CardContent, Button } from '@mui/material';
-import Image1 from '../assets/bg.jpg'
+import Image1 from '../assets/react.png'
 import Image3 from '../assets/code-hero.jpg'
 
 const Project5 = () => {

@@ -4,7 +4,7 @@ import Image1 from '../assets/gtg-hero5.png';
 import Image3 from '../assets/gtg-styl.jpg';
 import Image4 from '../assets/q.jpg';
 import Image5 from '../assets/gtg-service.png';
-import Image6 from '../assets/gtg-prototype.jpg';
+import Image6 from '../assets/gtg-team.jpg';
 
 const Home = () => {
   return (
@@ -67,7 +67,7 @@ const Home = () => {
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
         <Box sx={{ flex: 1 }}>
         <img
-            src={Image3}
+            src={Image4}
             alt="Project Summary Visual"
             style={{ width: '100%', height: 'auto', borderRadius: 12 }}
           />
@@ -78,7 +78,7 @@ const Home = () => {
             Challenge
           </Typography>
           <Typography>
-            Go2Growth — a startup focused on business growth and digital transformation — needed a cohesive brand identity and a professional website that reflected its mission, values, and unique service offerings. The design needed to balance clarity, approachability, and credibility for a diverse B2B audience.
+            Go2Growth a startup focused on business growth and digital transformation, needed a cohesive brand identity and a professional website that reflected its mission, values, and unique service offerings. The design needed to balance clarity, approachability, and credibility for a diverse B2B audience.
           </Typography>
         </Box>
       </Box>
@@ -92,7 +92,7 @@ const Home = () => {
           <Typography>Brand Designer & WordPress Website Creator</Typography>
         </Box>
         <img
-            src={Image4}
+            src={Image3}
             alt="Project Summary Visual"
             style={{ width: '100%', height: 'auto', borderRadius: 12 }}
           />
@@ -129,7 +129,7 @@ const Home = () => {
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', md: 'row' }, gap: 4, alignItems: 'center', mb: 5 }}>
       <Box sx={{ flex: 1 }}>
           <img
-            src={Image1}
+            src={Image6}
             alt="Project Summary Visual"
             style={{ width: '100%', height: 'auto', borderRadius: 12 }}
           />

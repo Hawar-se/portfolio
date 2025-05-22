@@ -2,6 +2,8 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Typography, Link, List, ListItem, Divider } from '@mui/material';
 import Image3 from '../assets/u.png';
 import Image1 from '../assets/u-prototype.png';
+import Image2 from '../assets/uni.webp';
+
 
 const Project4 = () => {
   return (
@@ -53,8 +55,7 @@ const Project4 = () => {
           Unicontrol Application 
          </Typography>
           <Typography variant="h6">
-            UI/UX Design · Mobile-First Approach · Wireframing
-          </Typography>
+          Enhancing UX with a Responsive Redesign for Unicontrol          </Typography>
         </Box>
       </Box>
 
@@ -66,7 +67,7 @@ const Project4 = () => {
        
          <Box sx={{ flex: 1 }}>
           <img
-            src={Image1}
+            src={Image2}
             alt="Project Summary Visual"
             style={{ width: '100%', height: 'auto', borderRadius: 12 }}
           />
@@ -76,7 +77,9 @@ const Project4 = () => {
             Challenge
           </Typography>
           <Typography>
-            The existing Unicontrol website lacked a responsive design, making it difficult for users to navigate on mobile and tablet devices. The challenge was to create a mobile-first wireframe prototype that would enhance user experience across various screen sizes.
+          The existing Unicontrol application lacked a responsive design, making it difficult for users to navigate on mobile and tablet devices. The challenge was to create a mobile-first wireframe prototype to improve usability across various screen sizes.
+
+In addition to the UX design work, I also contributed to maintaining and enhancing the existing React-based application by implementing new features and improving the overall user interface, ensuring a more consistent and intuitive experience.
           </Typography>
         </Box>
       </Box>
@@ -98,8 +101,8 @@ const Project4 = () => {
             Summary
           </Typography>
           <Typography>
-            I developed wireframe prototypes focusing on mobile and tablet interfaces for the Unicontrol website. The goal was to improve usability and ensure a seamless experience across devices, adhering to a mobile-first design approach.
-          </Typography>
+          I designed mobile-first wireframe prototypes to enhance the responsiveness and usability of the Unicontrol website across all devices. Alongside the design improvements, I also maintained and enhanced the existing React application by implementing new features and refining the UI for a more consistent user experience.
+                    </Typography>
         </Box>
         <Box sx={{ flex: 1 }}>
           <img

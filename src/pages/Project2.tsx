@@ -4,6 +4,10 @@ import Image1 from '../assets/n-hero.png';
 import Image3 from '../assets/n-logo.png';
 import Image5 from '../assets/n-p.png';
 import Image6 from '../assets/Bird.svg';
+import Image7 from '../assets/n-w.png';
+import {  ListItemIcon, ListItemText } from '@mui/material';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+
 
 
 const Home = () => {
@@ -22,8 +26,9 @@ const Home = () => {
       </Typography>
 
       <Typography variant="h6" color="text.secondary" gutterBottom>
-      UX RESEARCH · UX DESIGN · UI DESIGN · USABILITY TEST
-      </Typography>
+      Angular Development . Design System  · UI Design· Figma
+
+</Typography>
 
       {/* Hero Section */}
       <Box
@@ -56,8 +61,7 @@ const Home = () => {
           Nightingale.io 
          </Typography>
           <Typography variant="h6">
-            UI/UX Design · Mobile-First Approach · Wireframing
-          </Typography>
+          Improving Logic and Flow in Audiobook Distribution          </Typography>
         </Box>
       </Box>
 
@@ -122,21 +126,55 @@ const Home = () => {
       <Divider sx={{ mb: 4 }} />
 
       {/* Responsibilities List */}
-      <Box sx={{ mb: 5 }}>
-        <Typography variant="h6" gutterBottom>
+      <Box sx={{ display: 'flex', alignItems:'center', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
+
+      <Box sx={{ flex: 2 }}>
+      <Typography variant="h6" gutterBottom>
           My Responsibilities
         </Typography>
-        <List>
-          <ListItem>My Responsibilities:
-</ListItem>
-          <ListItem>Created Figma prototypes to demonstrate new interaction paths and logic</ListItem>
-          <ListItem>Worked closely with Angular developers to implement the redesigned workflow</ListItem>
-          <ListItem>Ensured UX consistency across components and handled responsive behavior</ListItem>
-          <ListItem>Designed new workflows and improved UX flow with low- to high-fidelity wireframes</ListItem>
-          <ListItem>Mapped the existing title-creation process and identified user pain points
-          </ListItem>
-        </List>
+<List>
+  <ListItem>
+    <ListItemIcon sx={{ minWidth: 20 }}>
+      <FiberManualRecordIcon fontSize="small" />
+    </ListItemIcon>
+    <ListItemText primary="Created Figma prototypes to demonstrate new interaction paths and logic" />
+  </ListItem>
+  <ListItem>
+    <ListItemIcon sx={{ minWidth: 20 }}>
+      <FiberManualRecordIcon fontSize="small" />
+    </ListItemIcon>
+    <ListItemText primary="Worked closely with Angular developers to implement the redesigned workflow" />
+  </ListItem>
+  <ListItem>
+    <ListItemIcon sx={{ minWidth: 20 }}>
+      <FiberManualRecordIcon fontSize="small" />
+    </ListItemIcon>
+    <ListItemText primary="Ensured UX consistency across components and handled responsive behavior" />
+  </ListItem>
+  <ListItem>
+    <ListItemIcon sx={{ minWidth: 20 }}>
+      <FiberManualRecordIcon fontSize="small" />
+    </ListItemIcon>
+    <ListItemText primary="Designed new workflows and improved UX flow with low- to high-fidelity wireframes" />
+  </ListItem>
+  <ListItem>
+    <ListItemIcon sx={{ minWidth: 20 }}>
+      <FiberManualRecordIcon fontSize="small" />
+    </ListItemIcon>
+    <ListItemText primary="Mapped the existing title-creation process and identified user pain points" />
+  </ListItem>
+</List>
+
       </Box>
+      <Box sx={{ flex: 1 }}>
+  <img
+    src={Image7}
+    alt="Project Summary Visual"
+    style={{ width: '100%', height: 'auto', borderRadius: 12, border: '2px solid #000' }}
+  />
+</Box>
+
+        </Box>
     </Box>
   );
 };
