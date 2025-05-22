@@ -1,63 +1,153 @@
-import { Link } from 'react-router-dom';
-import Image5 from '../assets/gtg-hero5.png';
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Typography, Link, List, ListItem, Divider } from '@mui/material';
+import Image1 from '../assets/gtg-hero5.png';
+import Image3 from '../assets/gtg-styl.jpg';
+import Image4 from '../assets/q.jpg';
+import Image5 from '../assets/gtg-service.png';
+import Image6 from '../assets/gtg-prototype.jpg';
 
 const Home = () => {
- 
-
   return (
-    <div className="p-card1">
-        <div className="back-link">
-          <Link to="/">← Back to Home</Link>
-        </div>
+    <Box sx={{ px: { xs: 2, sm: 4 }, py: 3, maxWidth: '1100px', margin: 'auto' }}>
+      {/* Back Link */}
+      <Box sx={{ mb: 3 }}>
+        <Link component={RouterLink} to="/" underline="none" color="primary">
+          ← Back to Home
+        </Link>
+      </Box>
 
-      <h1 className="project-title">GoToGrowth
-      </h1>
-      <h2 className="project-subtitle">
-      UX RESEARCH - UX DESIGN - UI DESIGN - USABILITY TEST  </h2>
-      
-      {/* <!-- Hero --> */}
-      <div className="hero-image" style={{ width: '100%', height: '700px' }}>
-      <img src={Image5} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-       </div>
+      {/* Hero Section */}
+      <Typography variant="h3" component="h1" gutterBottom>
+        GoToGrowth
+      </Typography>
 
+      <Typography variant="h6" color="text.secondary" gutterBottom>
+      UX RESEARCH · UX DESIGN · UI DESIGN · USABILITY TEST
+      </Typography>
 
-      {/* <!-- Roles & Summary --> */}
-      <div className="project-section">
-        <h2>Role:</h2>
-        <p>Brand Designer & WordPress Website Creator</p>
-      </div>
+      {/* Hero Section */}
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          height: { xs: 400, md: 700 },
+          mb: 4,
+          overflow: 'hidden',
+          borderRadius: 2,
+        }}
+      >
+        <img
+          src={Image1}
+          alt="Unicontrol Hero"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: 20,
+            left: 20,
+            color: 'white',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            padding: 2,
+            borderRadius: 1,
+          }}
+        >
+          <Typography variant="h3" component="h1" gutterBottom>
+              GoToGrowth 
+         </Typography>
+          <Typography variant="h6">
+            UI/UX Design · Mobile-First Approach · Wireframing
+          </Typography>
+        </Box>
+      </Box>
 
-      <div className="project-section">
-        <h2>Summary:</h2>
-        <p>I co-created the Go2Growth brand from the ground up. This included logo design, full brand identity, and planning the website content structure for intuitive navigation.</p>
-      </div>
+      <Divider sx={{ mb: 4 }} />
 
-      {/* <!-- Screenshots Gallery --> 
-      <div className="project-section">
-        <h2>Screenshots:</h2>
-        <div className="screenshot-gallery">
-          <img src="assets/q.jpg" alt="Screenshot 1" />
-          <img src="assets/g2g-team.jpg" alt="Screenshot 2" />
-          <img src="assets/1.png" alt="Screenshot 3" />
-          <img src="assets/gtg-styl.jpg" alt="Screenshot 4" />
-          <img src="assets/gtg-card.jpg" alt="Screenshot 5" />
-          <img src="assets/gtg-prototype.png" alt="Screenshot 6" />
-        </div>
-      </div>
-      */}
+      {/* Role & Challenge */}
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
+        <Box sx={{ flex: 1 }}>
+        <img
+            src={Image3}
+            alt="Project Summary Visual"
+            style={{ width: '100%', height: 'auto', borderRadius: 12 }}
+          />
+        </Box>
+        
+        <Box sx={{ flex: 2 }}>
+          <Typography variant="h6" gutterBottom>
+            Challenge
+          </Typography>
+          <Typography>
+            Go2Growth — a startup focused on business growth and digital transformation — needed a cohesive brand identity and a professional website that reflected its mission, values, and unique service offerings. The design needed to balance clarity, approachability, and credibility for a diverse B2B audience.
+          </Typography>
+        </Box>
+      </Box>
+      <Divider sx={{ mb: 4 }} />
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
+        <Box sx={{ flex: 1 }}>
+        <Box sx={{ flex: 2 }}>
+        <Typography variant="h6" gutterBottom>
+            Role
+          </Typography>
+          <Typography>Brand Designer & WordPress Website Creator</Typography>
+        </Box>
+        <img
+            src={Image4}
+            alt="Project Summary Visual"
+            style={{ width: '100%', height: 'auto', borderRadius: 12 }}
+          />
+        </Box>
+      </Box>
 
-      <div className="project-section">
-        <h2>My Responsibilities:</h2>
-        <ul>
-          <li>Created brand logo, typography, and visual design system</li>
-          <li>Designed & developed the website in WordPress (incl. responsiveness)</li>
-          <li>Defined page layout for all main sections (Home, Services, Our Story, Contact)</li>
-          <li>Ensured accessibility, branding consistency, and modern UI</li>
-        </ul>
-      </div>
+      <Divider sx={{ mb: 4 }} />
 
-    
-    </div>
+      {/* Summary Section with Image */}
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', md: 'row' }, gap: 4, alignItems: 'center', mb: 5 }}>
+        <Box sx={{ flex: 2 }}>
+          <Typography variant="h6" gutterBottom>
+            Summary
+          </Typography>
+          <Typography>
+            I co-created the Go2Growth brand from the ground up. This included logo design,
+            full brand identity, and planning the website content structure for intuitive navigation.
+          </Typography>
+        </Box>
+        <Box sx={{ flex: 1 }}>
+          <img
+            src={Image5}
+            alt="Project Summary Visual"
+            style={{ width: '100%', height: 'auto', borderRadius: 12 }}
+          />
+        </Box>
+      </Box>
+
+      <Divider sx={{ mb: 4 }} />
+
+      {/* Responsibilities List */}
+      <Box sx={{ mb: 5 }}>
+      </Box>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', md: 'row' }, gap: 4, alignItems: 'center', mb: 5 }}>
+      <Box sx={{ flex: 1 }}>
+          <img
+            src={Image1}
+            alt="Project Summary Visual"
+            style={{ width: '100%', height: 'auto', borderRadius: 12 }}
+          />
+        </Box>
+        <Box sx={{ flex: 2 }}>
+        <Typography variant="h6" gutterBottom>
+          My Responsibilities
+        </Typography>
+        <List>
+          <ListItem>Created brand logo, typography, and visual design system</ListItem>
+          <ListItem>Designed & developed the website in WordPress (incl. responsiveness)</ListItem>
+          <ListItem>Defined page layout for all main sections (Home, Services, Our Story, Contact)</ListItem>
+          <ListItem>Ensured accessibility, branding consistency, and modern UI</ListItem>
+        </List>
+        </Box>
+        
+      </Box>
+    </Box>
   );
 };
 

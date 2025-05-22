@@ -1,53 +1,144 @@
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Typography, Link, List, ListItem, Divider } from '@mui/material';
 import Image1 from '../assets/n-hero.png';
+import Image3 from '../assets/n-logo.png';
+import Image5 from '../assets/n-p.png';
+import Image6 from '../assets/Bird.svg';
 
-const Project2 = () => {
+
+const Home = () => {
   return (
-      <div className="p-card1">
-        <div className="back-link">
-          <Link to="/">← Back to Home</Link>
-        </div>
+    <Box sx={{ px: { xs: 2, sm: 4 }, py: 3, maxWidth: '1100px', margin: 'auto' }}>
+      {/* Back Link */}
+      <Box sx={{ mb: 3 }}>
+        <Link component={RouterLink} to="/" underline="none" color="primary">
+          ← Back to Home
+        </Link>
+      </Box>
 
-      <h1 className="project-title">Nightinggale.io
-      </h1>
-      <h2 className="n-subtitle">
-      Angular - Tailwind - Figma - USABILITY TEST  </h2>
-      
-      {/* <!-- Hero --> */}
-      <div className="hero-image" style={{ width: '100%', height: '700px' }}>
-  <img src={Image1} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-</div>
+      {/* Hero Section */}
+      <Typography variant="h3" component="h1" gutterBottom>
+      Nightingale.io
+      </Typography>
 
-        <div className="project-section">
-          <h2>Role:</h2>
-          <p>UX Designer & Front-end Contributor (Angular)</p>
-        </div>
+      <Typography variant="h6" color="text.secondary" gutterBottom>
+      UX RESEARCH · UX DESIGN · UI DESIGN · USABILITY TEST
+      </Typography>
 
-        <div className="project-section">
-          <h2>Summary:</h2>
-          <p>
-            I led the redesign of a core feature within Nightingale.io, a complex web-based
-            distribution and publishing application. The focus was on creating a streamlined and
-            user-friendly workflow for adding new titles to the platform — an area that was
-            previously confusing due to high technical complexity and legacy logic.
-          </p>
-        </div>
+      {/* Hero Section */}
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          height: { xs: 400, md: 700 },
+          mb: 4,
+          overflow: 'hidden',
+          borderRadius: 2,
+        }}
+      >
+        <img
+          src={Image1}
+          alt="Unicontrol Hero"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: 20,
+            left: 20,
+            color: 'white',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            padding: 2,
+            borderRadius: 1,
+          }}
+        >
+          <Typography variant="h3" component="h1" gutterBottom>
+          Nightingale.io 
+         </Typography>
+          <Typography variant="h6">
+            UI/UX Design · Mobile-First Approach · Wireframing
+          </Typography>
+        </Box>
+      </Box>
 
-        <div className="project-section">
-          <h2>My Responsibilities:</h2>
-          <ul>
-            <li>Mapped the existing title-creation process and identified user pain points</li>
-            <li>Designed new workflows and improved UX flow with low- to high-fidelity wireframes</li>
-            <li>Created Figma prototypes to demonstrate new interaction paths and logic</li>
-            <li>Worked closely with Angular developers to implement the redesigned workflow</li>
-            <li>Ensured UX consistency across components and handled responsive behavior</li>
-          </ul>
-        </div>
+      <Divider sx={{ mb: 4 }} />
 
+      {/* Role & Challenge */}
+      <Box sx={{ display: 'flex', alignItems:'center', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
+        <Box sx={{ flex: 1 }}>
+        <img
+            src={Image3}
+            alt="Project Summary Visual"
+            style={{ width: '100%', height: 'auto', borderRadius: 12 }}
+          />
+        </Box>
+        
+        <Box sx={{ flex: 2 }}>
+          <Typography variant="h6" gutterBottom>
+          Challenge:
+          </Typography>
+          <Typography>
+          Nightingale.io's audiobook publishing platform had a complex and inconsistent logic for creating and distributing audiobook titles. This complexity affected both the user experience and the internal workflows of publishers.          </Typography>
+        </Box>
+      </Box>
+      <Divider sx={{ mb: 4 }} />
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
+        <Box sx={{ flex: 1 }}>
+        <Box sx={{ flex: 2 }}>
+        <Typography variant="h6" gutterBottom>
+            Role
+          </Typography>
+          <Typography>UX Designer & Front-end Contributor (Angular)</Typography>
+        </Box>
+        <img
+            src={Image5}
+            alt="Project Summary Visual"
+            style={{ width: '100%', height: 'auto', borderRadius: 12 }}
+          />
+        </Box>
+      </Box>
 
-       
-      </div>
+      <Divider sx={{ mb: 4 }} />
+
+      {/* Summary Section with Image */}
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', md: 'row' }, gap: 4, alignItems: 'center', mb: 5 }}>
+        <Box sx={{ flex: 2 }}>
+          <Typography variant="h6" gutterBottom>
+            Summary
+          </Typography>
+          <Typography>
+          I led the redesign of a core feature within Nightingale.io, a complex web-based distribution and publishing application. The focus was on creating a streamlined and user-friendly workflow for adding new titles to the platform. This area was previously confusing due to high technical complexity and legacy logic.
+          </Typography>
+        </Box>
+        <Box sx={{ flex: 1 }}>
+          <img
+            src={Image6}
+            alt="Project Summary Visual"
+            style={{ width: '100%', height: 'auto', borderRadius: 12 }}
+          />
+        </Box>
+      </Box>
+
+      <Divider sx={{ mb: 4 }} />
+
+      {/* Responsibilities List */}
+      <Box sx={{ mb: 5 }}>
+        <Typography variant="h6" gutterBottom>
+          My Responsibilities
+        </Typography>
+        <List>
+          <ListItem>My Responsibilities:
+</ListItem>
+          <ListItem>Created Figma prototypes to demonstrate new interaction paths and logic</ListItem>
+          <ListItem>Worked closely with Angular developers to implement the redesigned workflow</ListItem>
+          <ListItem>Ensured UX consistency across components and handled responsive behavior</ListItem>
+          <ListItem>Designed new workflows and improved UX flow with low- to high-fidelity wireframes</ListItem>
+          <ListItem>Mapped the existing title-creation process and identified user pain points
+          </ListItem>
+        </List>
+      </Box>
+    </Box>
   );
 };
 
-export default Project2;
+export default Home;

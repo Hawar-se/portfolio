@@ -1,79 +1,114 @@
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Typography, Link, Divider, Card, CardContent, Button } from '@mui/material';
+import Image1 from '../assets/bg.jpg'
+import Image3 from '../assets/code-hero.jpg'
 
-
-const Project1 = () => {
+const Project5 = () => {
   return (
+    <Box sx={{ px: { xs: 2, sm: 4 }, py: 3, maxWidth: '1100px', margin: 'auto' }}>
+      {/* Back Link */}
+         {/* Hero Section */}
 
-    
-    <div className="project-container">
-       {/* Navigation */}
-            
-      
-            <nav className="navbar">
-            <div className="logo">Hawar</div>  
-            <div className="nav-links">
-      
-        <Link to="/#projects">Projects</Link>
-        <Link to="/#about">About</Link>
-        </div>
-      </nav>
-      <div className="p-card1">
-      <div className="back-link">
-          <Link to="/">← Back to Home</Link>
-        </div>
-        <h1 className="project-title">GoToGrowth Project Entry</h1>
+            <Divider sx={{ mb: 4 }} />
+      <Box sx={{ mb: 3 }}>
+        <Link component={RouterLink} to="/" underline="none" color="primary">
+          ← Back to Home
+        </Link>
+      </Box>
 
-        <section className="project-section">
-          <h2>Project:</h2>
-          <div className="project-content">
-            <p>Go2Growth Website & Brand Identity</p>
-            <img src="../assets/Gotogrowth.png" alt="Go2Growth Project" className="project-image" />
-          </div>
-        </section>
+      {/* Page Title */}
+      <Typography variant="h3" component="h1" gutterBottom>
+        JavaScript & React Practice Projects
+      </Typography>
 
-        <div className="project-section">
-          <h2>Role:</h2>
-          <p>Brand Designer & WordPress Website Creator</p>
-        </div>
+      <Typography variant="h6" color="text.secondary" gutterBottom>
+        Skill Refresh · Frontend Development · Personal Practice
+      </Typography>
+      <Box
+              sx={{
+                position: 'relative',
+                width: '100%',
+                height: { xs: 400, md: 700 },
+                mb: 4,
+                overflow: 'hidden',
+                borderRadius: 2,
+              }}
+            >
+              <img
+                src={Image3}
+                alt="Unicontrol Hero"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+              
+            </Box>
 
-        <div className="project-section">
-          <h2>Summary:</h2>
-          <p>
-            I co-created the Go2Growth brand from the ground up. My work included the logo
-            design, complete brand identity, and the layout and content structure of the company’s
-            website using WordPress.
-          </p>
-        </div>
+      {/* Introduction */}
+      <Typography paragraph>
+      </Typography>
 
-        <div className="project-section">
-          <h2>My Responsibilities:</h2>
-          <ul>
-            <li>Designed the logo and visual identity (colors, typography, style guide)</li>
-            <li>Built all website pages using WordPress (Home, Services, Our Story, etc.)</li>
-            <li>Focused on clear structure, intuitive navigation, and strong visual presentation</li>
-          </ul>
-        </div>
+      <Divider sx={{ my: 4 }} />
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
+              <Box sx={{ flex: 1 }}>
+              <img
+                  src={Image1}
+                  alt="Project Summary Visual"
+                  style={{ width: '100%', height: 'auto', borderRadius: 12 }}
+                />
+              </Box>
+              
+              <Box sx={{ flex: 2 }}>
+                <Typography variant="h6" gutterBottom>
+                  Subject
+                </Typography>
+                <Typography>
+                While actively applying my experience in UI/UX and frontend development, I took the initiative to refresh my core skills by building two mini-projects. These helped me reconnect with JavaScript fundamentals and React component logic. Below are the projects I built during this process.
+                </Typography>
+              </Box>
+            </Box>
 
-        <div className="project-section">
-          <h2>Tools Used:</h2>
-          <p>Adobe Illustrator, WordPress, Photoshop, Canva</p>
-        </div>
+      {/* Project 1 - Vanilla JS CRUD */}
+      <Card sx={{ mb: 4 }}>
+        <CardContent>
+          <Typography variant="h5" gutterBottom>
+            Vanilla JavaScript CRUD App
+          </Typography>
+          <Typography paragraph>
+            A simple Create, Read, Update, Delete application developed using pure JavaScript. It highlights my understanding of DOM manipulation, local storage, and core programming logic without relying on frameworks.
+          </Typography>
+          <Button
+            variant="outlined"
+            color="primary"
+            href="https://github.com/Hawar-se/CRUD-js"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View GitHub Repository
+          </Button>
+        </CardContent>
+      </Card>
 
-        <div className="project-section">
-          <h2>Link:</h2>
-          <ul>
-            <li>
-              <a href="https://gotogrowth.dk" target="_blank" rel="noopener noreferrer">
-                Visit GoToGrowth Website
-              </a>
-            </li>
-            <li>Screenshots of logo, design samples, web page layout (to be added)</li>
-            <li><img/></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      {/* Project 2 - React To-Do List */}
+      <Card>
+        <CardContent>
+          <Typography variant="h5" gutterBottom>
+            React To-Do List App
+          </Typography>
+          <Typography paragraph>
+            A task management application built with React using functional components and hooks like <code>useState</code>. This project helped solidify my understanding of React’s component-driven approach and state management.
+          </Typography>
+          <Button
+            variant="outlined"
+            color="primary"
+            href="https://github.com/Hawar-se/React-To-Do-App"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View GitHub Repository
+          </Button>
+        </CardContent>
+      </Card>
+    </Box>
   );
 };
 
-export default Project1;
+export default Project5;
