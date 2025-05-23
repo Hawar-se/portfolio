@@ -1,6 +1,5 @@
 import {
   Box,
-  Grid,
   Typography,
   Button,
   Link as MuiLink,
@@ -19,11 +18,22 @@ import Image2 from '../assets/n-logo.png';
 import Image3 from '../assets/u.png'
 import Image5 from '../assets/react.png'
 import ProjectCard from '../components/ProjectCard';
+import Grid from '@mui/material/Grid';
+import { useEffect } from 'react';
+
 
 
 const Home = () => {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.substring(1));
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   const projects = [
     {
@@ -54,39 +64,6 @@ const Home = () => {
 
   return (
 <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 8 }, bgcolor: 'background.default' }}>
-{/* Navbar */}
-      <Box
-        component="nav"
-        sx={{
-          position: 'sticky',
-          top: 0,
-          zIndex: theme.zIndex.appBar,
-          bgcolor: 'background.paper',
-          boxShadow: theme.shadows[3],
-          px: 3,
-          py: 1.5,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          borderRadius: 2,
-        }}
-      >
-        <Typography variant="h6" fontWeight="bold" sx={{ letterSpacing: 1 }}>
-          Hawar
-        </Typography>
-        <Stack direction="row" spacing={3}>
-          <Link smooth to="/#projects" style={{ textDecoration: 'none' }}>
-            <Button variant="text" size="large" color="primary">
-              Projects
-            </Button>
-          </Link>
-          <Link smooth to="/#about" style={{ textDecoration: 'none' }}>
-            <Button variant="text" size="large" color="primary">
-              About
-            </Button>
-          </Link>
-        </Stack>
-      </Box>
 
       {/* Hero Section */}
 <Grid
@@ -133,8 +110,7 @@ Let’s build something that not only works great, but feels great to use.
           size="large"
           sx={{ px: 5, py: 1.75, fontWeight: 'bold', fontSize: { xs: '0.875rem', md: '1rem' } }}
         >
-          Learn More
-        </Button>
+Explore My Story        </Button>
       </Link>
     </Box>
   </Grid>
@@ -205,7 +181,7 @@ Let’s build something that not only works great, but feels great to use.
   {/* Image on the left */}
   <Box
     component="img"
-    src={Image4}
+    src={meImage}
     alt="Hawar"
     sx={{
       width: { xs: '100%', md: '50%' },
@@ -263,52 +239,6 @@ Beyond coding, I find joy in nurturing my backyard garden and caring for my chic
   </Box>
 </Box>
 
-{/* Contact Icons */}
-<Box
-  sx={{
-    display: 'flex',
-    justifyContent: 'center',
-    gap: 6,
-    mt: 4,
-    mb: 4,
-    color: theme.palette.text.primary,
-  }}
->
-  <MuiLink
-    href="https://www.linkedin.com/in/hawar-abdulwahid/"
-    target="_blank"
-    rel="noopener noreferrer"
-    color="inherit"
-    sx={{
-      transition: 'color 0.3s',
-      '&:hover': { color: theme.palette.primary.main },
-    }}
-  >
-    <FaLinkedin size={36} />
-  </MuiLink>
-  <MuiLink
-    href="mailto:hawar-sevar@hotmail.com"
-    color="inherit"
-    sx={{
-      transition: 'color 0.3s',
-      '&:hover': { color: theme.palette.primary.main },
-    }}
-  >
-    <FaEnvelope size={36} />
-  </MuiLink>
-  <MuiLink
-    href="https://github.com/Hawar-se"
-    target="_blank"
-    rel="noopener noreferrer"
-    color="inherit"
-    sx={{
-      transition: 'color 0.3s',
-      '&:hover': { color: theme.palette.primary.main },
-    }}
-  >
-    <FaGithub size={36} />
-  </MuiLink>
-</Box>
     </Box>
   );
 };

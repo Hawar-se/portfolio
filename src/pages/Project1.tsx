@@ -1,10 +1,9 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, Typography, Link, List, ListItem, Divider } from '@mui/material';
+import { Box, Typography, Link, Divider } from '@mui/material';
 import Image1 from '../assets/gtg-hero5.png';
 import Image3 from '../assets/gtg-styl.jpg';
 import Image4 from '../assets/q.jpg';
 import Image5 from '../assets/gtg-service.png';
-import Image6 from '../assets/gtg-team.jpg';
 
 const Home = () => {
   return (
@@ -84,20 +83,29 @@ const Home = () => {
       </Box>
       <Divider sx={{ mb: 4 }} />
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
-        <Box sx={{ flex: 1 }}>
-        <Box sx={{ flex: 2 }}>
-        <Typography variant="h6" gutterBottom>
-            Role
-          </Typography>
-          <Typography>Brand Designer & WordPress Website Creator</Typography>
-        </Box>
-        <img
-            src={Image3}
-            alt="Project Summary Visual"
-            style={{ width: '100%', height: 'auto', borderRadius: 12 }}
-          />
-        </Box>
-      </Box>
+  <Box sx={{ flex: 1 }}>
+    <Typography variant="h6" gutterBottom>
+      🛠️ My Role & Responsibilities
+    </Typography>
+    <ul style={{ paddingLeft: '1.2rem', marginTop: 0 }}>
+      <li>Co-founded the business and contributed to strategic direction</li>
+      <li>Designed the full brand identity, including logo and visual assets</li>
+      <li>Created print materials such as business cards and flyers</li>
+      <li>Developed and launched a user-friendly website using One.com</li>
+      <li>Designed all content and visuals in Figma</li>
+      <li>Produced marketing materials consistent with the brand style</li>
+      <li>Ensured cohesive branding across all physical and digital touchpoints</li>
+    </ul>
+  </Box>
+  <Box sx={{ flex: 2 }}>
+    <img
+      src={Image3}
+      alt="Project Summary Visual"
+      style={{ width: '100%', height: 'auto', borderRadius: 12 }}
+    />
+  </Box>
+</Box>
+
 
       <Divider sx={{ mb: 4 }} />
 
@@ -121,32 +129,6 @@ const Home = () => {
         </Box>
       </Box>
 
-      <Divider sx={{ mb: 4 }} />
-
-      {/* Responsibilities List */}
-      <Box sx={{ mb: 5 }}>
-      </Box>
-      <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', md: 'row' }, gap: 4, alignItems: 'center', mb: 5 }}>
-      <Box sx={{ flex: 1 }}>
-          <img
-            src={Image6}
-            alt="Project Summary Visual"
-            style={{ width: '100%', height: 'auto', borderRadius: 12 }}
-          />
-        </Box>
-        <Box sx={{ flex: 2 }}>
-        <Typography variant="h6" gutterBottom>
-          My Responsibilities
-        </Typography>
-        <List>
-          <ListItem>Created brand logo, typography, and visual design system</ListItem>
-          <ListItem>Designed & developed the website in WordPress (incl. responsiveness)</ListItem>
-          <ListItem>Defined page layout for all main sections (Home, Services, Our Story, Contact)</ListItem>
-          <ListItem>Ensured accessibility, branding consistency, and modern UI</ListItem>
-        </List>
-        </Box>
-        
-      </Box>
     </Box>
   );
 };

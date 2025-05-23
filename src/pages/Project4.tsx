@@ -1,5 +1,4 @@
-import { Link as RouterLink } from 'react-router-dom';
-import { Box, Typography, Link, List, ListItem, Divider } from '@mui/material';
+import { Box, Typography, List, ListItem, Divider } from '@mui/material';
 import Image3 from '../assets/u.png';
 import Image1 from '../assets/u-prototype.png';
 import Image2 from '../assets/uni.webp';
@@ -8,13 +7,7 @@ import Image2 from '../assets/uni.webp';
 const Project4 = () => {
   return (
     <Box sx={{ px: { xs: 2, sm: 4 }, py: 3, maxWidth: '1100px', margin: 'auto' }}>
-      {/* Back Link */}
-      <Box sx={{ mb: 3 }}>
-        <Link component={RouterLink} to="/" underline="none" color="primary">
-          ← Back to Home
-        </Link>
-      </Box>
-
+      
       {/* Hero Section */}
       <Typography variant="h3" component="h1" gutterBottom>
         Unicontrol Application
