@@ -10,6 +10,7 @@ import Project2 from './pages/Project2';
 import Project3 from './pages/Project3';
 import Project4 from './pages/Project4';
 import Layout from './components/layout';
+import Project5 from './pages/Project5';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="project2" element={<Project2 />} />
         <Route path="project3" element={<Project3 />} />
         <Route path="project4" element={<Project4 />} />
+        <Route path="project5" element={<Project5 />} />
       </Route>
     </Routes>
       </Router>

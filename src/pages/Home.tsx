@@ -12,11 +12,12 @@ import {
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HashLink as Link } from 'react-router-hash-link';
 import meImage from '../assets/me.jpg';
-import Image4 from '../assets/me.png';
+import Image4 from '../assets/hero-rose.png';
 import Image1 from '../assets/Gotogrowth.png';
 import Image2 from '../assets/n-logo.png';
 import Image3 from '../assets/u.png'
 import Image5 from '../assets/react.png'
+import Image6 from '../assets/rosse.png'
 import ProjectCard from '../components/ProjectCard';
 import Grid from '@mui/material/Grid';
 import { useEffect } from 'react';
@@ -60,81 +61,80 @@ const Home = () => {
       link: '/project3',
       description: 'GoToGrowth website and Brand Identity',
     },
-  ];
+    
+      {
+        title: 'Upcoming Project',
+        image: Image6,
+        link: '/project5',
+        description: 'A&G Logo Design – a bold and minimal brand identity project in progress.',
+      },
+    ];
+      
 
   return (
 <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 8 }, bgcolor: 'background.default' }}>
 
       {/* Hero Section */}
-<Grid
-  container
-  spacing={6}
-  alignItems="center"
+<Box
   sx={{
-    mt: 0,
-    mb: 8,
-    flexDirection: { xs: 'column-reverse', md: 'row' },
-    minHeight: { md: '100vh' }, // Full viewport height on md+
+    maxWidth: 1200,
+    mx: 'auto',
+    mb: 10,
+    px: 3,
+    py: 6,
+    bgcolor: 'background.paper',
+    // boxShadow: theme.shadows[3],
+    borderRadius: 2,
+    display: 'flex',
+    flexDirection: { xs: 'column', md: 'row' },
+    alignItems: 'center',
+    gap: 4,
   }}
 >
-  <Grid item xs={12} md={6}>
-    <Box
-      sx={{
-        maxWidth: 600,
-        mx: { xs: 'auto', md: 0 },
-        textAlign: { xs: 'center', md: 'left' },
-        px: { xs: 2, md: 0 },
-        py: { xs: 2, md: 0 },
-      }}
+  {/* Text on the left */}
+  <Box sx={{ width: { xs: '100%', md: '50%' } }}>
+    <Typography
+      variant={isMdUp ? 'h1' : 'h3'}
+      fontWeight="bold"
+      gutterBottom
+      sx={{ letterSpacing: 2, mb: 4, lineHeight: 1.2 }}
     >
-      <Typography
-        variant={isMdUp ? 'h1' : 'h3'}  
-        fontWeight="bold"
-        gutterBottom
-        sx={{ letterSpacing: 2, mb: 4, lineHeight: 1.2 }}
+      Hi! I’m Hawar and I turn ideas into interactive, responsive websites that people love to use.
+    </Typography>
+    <Typography
+      variant="body1"
+      color="text.secondary"
+      sx={{ lineHeight: 1.8, mb: 4, fontSize: { xs: '1rem', md: '1.125rem' } }}
+    >
+      UI/UX-focused front-end developer passionate about clean code and clean design.
+      I blend technical expertise with design intuition to craft user-centered web experiences.
+      Let’s build something that not only works great, but feels great to use.
+    </Typography>
+    <Link smooth to="/#about" style={{ textDecoration: 'none' }}>
+      <Button
+        variant="contained"
+        size="large"
+        sx={{ px: 5, py: 1.75, fontWeight: 'bold', fontSize: { xs: '0.875rem', md: '1rem' } }}
       >
-        Hi! I’m Hawar and I turn ideas into interactive, responsive websites that people love to use.
-      </Typography>
-      <Typography
-        variant="body1"
-        color="text.secondary"
-        sx={{ lineHeight: 1.8, mb: 4, fontSize: { xs: '1rem', md: '1.125rem' } }}
-      >
-       UI/UX-focused front-end developer passionate about clean code and clean design.
-I blend technical expertise with design intuition to craft user-centered web experiences.
-Let’s build something that not only works great, but feels great to use.
-      </Typography>
-      <Link smooth to="/#about" style={{ textDecoration: 'none' }}>
-        <Button
-          variant="contained"
-          size="large"
-          sx={{ px: 5, py: 1.75, fontWeight: 'bold', fontSize: { xs: '0.875rem', md: '1rem' } }}
-        >
-Explore My Story        </Button>
-      </Link>
-    </Box>
-  </Grid>
-  <Grid item xs={12} md={6} sx={{ textAlign: 'center' }}>
-  <Box
-  component="img"
-  src={meImage}
-  alt="Hawar"
-  sx={{
-    width: { xs: 300, md: 400 },   // bigger on desktop
-    height: { xs: 400, md: 700 },
-    mx: 'auto',
-    boxShadow: theme.shadows[8],
-    borderRadius: 2,               // optional: add some rounded corners if you want
-    objectFit: 'cover',            // make sure the image covers the box nicely
-    transition: 'transform 0.3s ease',
-    '&:hover': {
-      transform: 'scale(1.07)',
-    },
-  }}
-/>
+        Explore My Story
+      </Button>
+    </Link>
+  </Box>
 
-  </Grid>
-</Grid>
+  {/* Image on the right */}
+  <Box
+    component="img"
+    src={Image4}
+    alt="Hawar"
+    sx={{
+      width: { xs: '100%', md: '50%' },
+      maxHeight: 1000,
+      borderRadius: 2,
+      // boxShadow: theme.shadows[4],
+      objectFit: 'cover',
+    }}
+  />
+</Box>
 
       {/* Projects Section */}
       <Box id="projects" sx={{ mb: 10 }}>
@@ -170,7 +170,7 @@ Explore My Story        </Button>
     px: 3,
     py: 6,
     bgcolor: 'background.paper',
-    boxShadow: theme.shadows[3],
+    // boxShadow: theme.shadows[3],
     borderRadius: 2,
     display: 'flex',
     flexDirection: { xs: 'column', md: 'row' },
@@ -187,7 +187,7 @@ Explore My Story        </Button>
       width: { xs: '100%', md: '50%' },
       maxHeight: 1000,
       borderRadius: 2,
-      boxShadow: theme.shadows[4],
+      // boxShadow: theme.shadows[4],
       objectFit: 'cover',
     }}
   />
