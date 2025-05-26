@@ -74,7 +74,7 @@ const Home = () => {
   return (
 <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 8 }, bgcolor: 'background.default' }}>
 
-      {/* Hero Section */}
+     {/* Hero Section */}
 <Box
   sx={{
     maxWidth: 1200,
@@ -82,39 +82,76 @@ const Home = () => {
     mb: 10,
     px: 3,
     py: 6,
-    bgcolor: 'background.paper',
-    // boxShadow: theme.shadows[3],
-    borderRadius: 2,
+    borderRadius: 4,
     display: 'flex',
     flexDirection: { xs: 'column', md: 'row' },
     alignItems: 'center',
-    gap: 4,
+    gap: 6,
+    bgcolor: 'linear-gradient(135deg, #f8f9fa, #e8f0fe)', // light gradient
+    position: 'relative',
+    overflow: 'hidden',
   }}
 >
+  {/* Decorative background blob (optional) */}
+  <Box
+    sx={{
+      position: 'absolute',
+      top: -80,
+      right: -80,
+      width: 300,
+      height: 300,
+      bgcolor: 'red',
+      borderRadius: '50%',
+      zIndex: 0,
+      filter: 'blur(900px)',
+    }}
+  />
+
   {/* Text on the left */}
-  <Box sx={{ width: { xs: '100%', md: '50%' } }}>
+  <Box sx={{ width: { xs: '100%', md: '50%' }, zIndex: 1 }}>
     <Typography
-      variant={isMdUp ? 'h1' : 'h3'}
+      variant={isMdUp ? 'h2' : 'h4'}
       fontWeight="bold"
       gutterBottom
-      sx={{ letterSpacing: 2, mb: 4, lineHeight: 1.2 }}
+      sx={{
+        letterSpacing: 1,
+        mb: 3,
+        lineHeight: 1.3,
+        color: 'text.primary',
+        fontFamily: '"Inter", sans-serif',
+      }}
     >
-      Hi! I’m Hawar and I turn ideas into interactive, responsive websites that people love to use.
+      Hi! I’m Hawar, I turn ideas into interactive, responsive websites people love to use.
     </Typography>
+
     <Typography
       variant="body1"
       color="text.secondary"
-      sx={{ lineHeight: 1.8, mb: 4, fontSize: { xs: '1rem', md: '1.125rem' } }}
+      sx={{
+        lineHeight: 1.8,
+        mb: 4,
+        fontSize: { xs: '1rem', md: '1.1rem' },
+        fontFamily: '"Inter", sans-serif',
+      }}
     >
       UI/UX-focused front-end developer passionate about clean code and clean design.
       I blend technical expertise with design intuition to craft user-centered web experiences.
       Let’s build something that not only works great, but feels great to use.
     </Typography>
+
     <Link smooth to="/#about" style={{ textDecoration: 'none' }}>
       <Button
         variant="contained"
         size="large"
-        sx={{ px: 5, py: 1.75, fontWeight: 'bold', fontSize: { xs: '0.875rem', md: '1rem' } }}
+        sx={{
+          px: 5,
+          py: 1.75,
+          fontWeight: 'bold',
+          fontSize: { xs: '0.875rem', md: '1rem' },
+          borderRadius: 999,
+          boxShadow: 3,
+          textTransform: 'none',
+        }}
       >
         Explore My Story
       </Button>
@@ -128,13 +165,19 @@ const Home = () => {
     alt="Hawar"
     sx={{
       width: { xs: '100%', md: '50%' },
-      maxHeight: 1000,
-      borderRadius: 2,
-      // boxShadow: theme.shadows[4],
+      maxWidth: 360,
+      borderRadius: '50%',
+      boxShadow: 4,
       objectFit: 'cover',
+      transition: 'transform 0.3s ease-in-out',
+      '&:hover': {
+        transform: 'scale(1.03)',
+      },
+      zIndex: 1,
     }}
   />
 </Box>
+
 
       {/* Projects Section */}
       <Box id="projects" sx={{ mb: 10 }}>
@@ -148,7 +191,7 @@ const Home = () => {
         <Link to={project.link} style={{ textDecoration: 'none' }}>
           <ProjectCard
             title={project.title}
-            description={project.description} // typo fixed below
+            description={project.description} 
             image={project.image}
             link={project.link}
           />
