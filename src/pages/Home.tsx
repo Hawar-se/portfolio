@@ -3,13 +3,10 @@ import {
   Typography,
   Button,
   Link as MuiLink,
-  Avatar,
-  Paper,
-  Stack,
   useTheme,
   useMediaQuery,
+  Fade,
 } from '@mui/material';
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HashLink as Link } from 'react-router-hash-link';
 import meImage from '../assets/me.jpg';
 import Image4 from '../assets/hero-rose.png';
@@ -73,111 +70,128 @@ const Home = () => {
 
   return (
 <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 8 }, bgcolor: 'background.default' }}>
-
-     {/* Hero Section */}
-<Box
-  sx={{
-    maxWidth: 1200,
-    mx: 'auto',
-    mb: 10,
-    px: 3,
-    py: 6,
-    borderRadius: 4,
-    display: 'flex',
-    flexDirection: { xs: 'column', md: 'row' },
-    alignItems: 'center',
-    gap: 6,
-    bgcolor: 'linear-gradient(135deg, #f8f9fa, #e8f0fe)', // light gradient
-    position: 'relative',
-    overflow: 'hidden',
-  }}
->
-  {/* Decorative background blob (optional) */}
+<Fade in={true} timeout={1000}>
+  
   <Box
     sx={{
-      position: 'absolute',
-      top: -80,
-      right: -80,
-      width: 300,
-      height: 300,
-      bgcolor: 'red',
-      borderRadius: '50%',
-      zIndex: 0,
-      filter: 'blur(900px)',
+      maxWidth: 1200,
+      mx: 'auto',
+      mb: 10,
+      px: { xs: 3, md: 6 },
+      py: { xs: 4, md: 6 },
+      borderRadius: 4,
+      display: 'flex',
+      flexDirection: { xs: 'column', md: 'row' },
+      alignItems: 'center',
+      gap: 6,
+      position: 'relative',
+      overflow: 'hidden',
+      bgcolor: 'background.paper',
+      color: 'text.primary',
     }}
-  />
-
-  {/* Text on the left */}
-  <Box sx={{ width: { xs: '100%', md: '50%' }, zIndex: 1 }}>
-    <Typography
-      variant={isMdUp ? 'h2' : 'h4'}
-      fontWeight="bold"
-      gutterBottom
+  >
+    {/* Animated background blob */}
+    <Box
       sx={{
-        letterSpacing: 1,
-        mb: 3,
-        lineHeight: 1.3,
-        color: 'text.primary',
-        fontFamily: '"Inter", sans-serif',
+        position: 'absolute',
+        top: -100,
+        left: -100,
+        width: 400,
+        height: 400,
+        bgcolor: '#90caf9',
+        borderRadius: '50%',
+        zIndex: 0,
+        filter: 'blur(150px)',
+        animation: 'pulse 6s ease-in-out infinite',
+        '@keyframes pulse': {
+          '0%': { transform: 'scale(1)', opacity: 0.4 },
+          '50%': { transform: 'scale(1.1)', opacity: 0.6 },
+          '100%': { transform: 'scale(1)', opacity: 0.4 },
+        },
       }}
-    >
-      Hi! I’m Hawar, I turn ideas into interactive, responsive websites people love to use.
-    </Typography>
+    />
 
-    <Typography
-      variant="body1"
-      color="text.secondary"
+    {/* Optional: overlay texture pattern */}
+    <Box
       sx={{
-        lineHeight: 1.8,
-        mb: 4,
-        fontSize: { xs: '1rem', md: '1.1rem' },
-        fontFamily: '"Inter", sans-serif',
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: 'url("/path-to-subtle-texture.png")',
+        opacity: 0.05,
+        zIndex: 0,
       }}
-    >
-      UI/UX-focused front-end developer passionate about clean code and clean design.
-      I blend technical expertise with design intuition to craft user-centered web experiences.
-      Let’s build something that not only works great, but feels great to use.
-    </Typography>
+    />
 
-    <Link smooth to="/#about" style={{ textDecoration: 'none' }}>
-      <Button
-        variant="contained"
-        size="large"
+    {/* Text Section */}
+    <Box sx={{ width: { xs: '100%', md: '50%' }, zIndex: 1 }}>
+      <Typography
+        variant={isMdUp ? 'h3' : 'h4'}
+        fontWeight="bold"
+        gutterBottom
         sx={{
-          px: 5,
-          py: 1.75,
-          fontWeight: 'bold',
-          fontSize: { xs: '0.875rem', md: '1rem' },
-          borderRadius: 999,
-          boxShadow: 3,
-          textTransform: 'none',
+          letterSpacing: '0.05em',
+          mb: 3,
+          lineHeight: 1.25,
+          fontFamily: '"Inter", sans-serif',
         }}
       >
-        Explore My Story
-      </Button>
-    </Link>
+        Hi! I’m Hawar, I turn ideas into interactive, responsive websites people love to use.
+      </Typography>
+
+      <Typography
+        variant="body1"
+        color="text.secondary"
+        sx={{
+          lineHeight: 1.7,
+          mb: 4,
+          fontSize: { xs: '1rem', md: '1.1rem' },
+          fontFamily: '"Inter", sans-serif',
+        }}
+      >
+        UI/UX-focused front-end developer passionate about clean code and clean design.
+        I blend technical expertise with design intuition to craft user-centered web experiences.
+        Let’s build something that not only works great, but feels great to use.
+      </Typography>
+
+      <Link smooth to="/#about" style={{ textDecoration: 'none' }}>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{
+            px: 5,
+            py: 1.75,
+            fontWeight: 'bold',
+            fontSize: { xs: '0.875rem', md: '1rem' },
+            borderRadius: 999,
+            boxShadow: 3,
+            textTransform: 'none',
+          }}
+        >
+          Explore My Story
+        </Button>
+      </Link>
+    </Box>
+
+    {/* Profile Image */}
+    <Box
+      component="img"
+      src={Image4}
+      alt="Hawar"
+      sx={{
+        width: { xs: '100%', md: '50%' },
+        maxWidth: 360,
+        borderRadius: '50%',
+        objectFit: 'cover',
+        boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
+        transition: 'transform 0.4s ease-in-out',
+        '&:hover': {
+          transform: 'scale(1.05)',
+        },
+        zIndex: 1,
+      }}
+    />
   </Box>
-
-  {/* Image on the right */}
-  <Box
-    component="img"
-    src={Image4}
-    alt="Hawar"
-    sx={{
-      width: { xs: '100%', md: '50%' },
-      maxWidth: 360,
-      borderRadius: '50%',
-      boxShadow: 4,
-      objectFit: 'cover',
-      transition: 'transform 0.3s ease-in-out',
-      '&:hover': {
-        transform: 'scale(1.03)',
-      },
-      zIndex: 1,
-    }}
-  />
-</Box>
-
+</Fade>
 
       {/* Projects Section */}
       <Box id="projects" sx={{ mb: 10 }}>
@@ -201,10 +215,10 @@ const Home = () => {
     </Grid>
   ))}
 </Grid>
-      {/* About Section */}
-
       </Box>
-      <Box
+            {/* About Section */}
+
+            <Box
   id="about"
   sx={{
     maxWidth: 1200,
@@ -213,7 +227,6 @@ const Home = () => {
     px: 3,
     py: 6,
     bgcolor: 'background.paper',
-    // boxShadow: theme.shadows[3],
     borderRadius: 2,
     display: 'flex',
     flexDirection: { xs: 'column', md: 'row' },
@@ -221,7 +234,7 @@ const Home = () => {
     gap: 4,
   }}
 >
-  {/* Image on the left */}
+  {/* Image Section */}
   <Box
     component="img"
     src={meImage}
@@ -230,46 +243,57 @@ const Home = () => {
       width: { xs: '100%', md: '50%' },
       maxHeight: 1000,
       borderRadius: 2,
-      // boxShadow: theme.shadows[4],
       objectFit: 'cover',
     }}
   />
 
-  {/* Text on the right */}
+  {/* Text Section */}
   <Box sx={{ width: { xs: '100%', md: '50%' } }}>
     <Typography variant="h4" fontWeight="bold" gutterBottom>
       About Me
-    </Typography>
-    <Typography
-      variant="body1"
-      color="text.secondary"
-      sx={{ lineHeight: 1.8, fontSize: '1.125rem' }}
-    >
-      I’m Hawar, a passionate UI/UX designer and front-end developer who loves crafting
-      intuitive, engaging digital experiences. With a strong eye for detail and creativity,
-      I build responsive websites that users enjoy interacting with.<br /><br />
-      I believe that great design goes hand in hand with great functionality. Beyond my
-      technical skills, I bring a positive, adaptable, and collaborative approach to every
-      project I work on.<br /><br />
-      Whether it’s a fresh startup idea or an established brand needing a boost, I’m excited
-      to help turn concepts into reality. Let’s create something impactful together.
-    </Typography>
-      {/* New personal text + CV link */}
-      <Typography variant="body1"
-      color="text.secondary"
-      sx={{ lineHeight: 1.8, fontSize: '1.125rem' }}>
-      Outside of work, I’m passionate about continuous learning, exploring new technologies, and collaborating with diverse teams.
-      Feel free to check out my CV for more about my experience and skills.
     </Typography>
 
     <Typography
       variant="body1"
       color="text.secondary"
-      sx={{ lineHeight: 1.8, fontSize: '1.125rem' }}>
-    🌿 Personal Interests
-Beyond coding, I find joy in nurturing my backyard garden and caring for my chickens, activities that instill a sense of responsibility and mindfulness. Pilates sessions keep me grounded and focused, enhancing my overall well-being. Additionally, I volunteer at a local swimming program for children, where I assist in teaching and supervising, reflecting my commitment to community engagement and teamwork.
-</Typography>   
-<Button
+      sx={{ lineHeight: 1.8, fontSize: '1.125rem', mb: 2 }}
+    >
+      I’m Hawar, a passionate UI/UX designer and front-end developer who loves crafting
+      intuitive, accessible, and visually engaging digital experiences. I specialize in building
+      responsive, user-friendly interfaces using tools like <strong>Figma, Adobe XD, React, and Material UI</strong>.
+      <br /><br />
+      My design approach is rooted in <strong>clarity, accessibility, and simplicity</strong>. I believe that
+      great digital products are not only functional but emotionally engaging — they anticipate user needs
+      and create a sense of flow.
+      <br /><br />
+      What sets me apart is my <strong>blend of design sensibility and technical skill</strong>. I bring a collaborative
+      mindset to every project, whether I’m wireframing an idea, prototyping a flow, or coding the final experience.
+      I’m deeply committed to continuous learning and love transforming abstract ideas into real, meaningful products.
+      <br /><br />
+      Whether you’re launching a fresh startup or refreshing an established brand, I’m here to help bring your vision
+      to life — beautifully and intuitively.
+    </Typography>
+
+    <Typography
+      variant="body1"
+      color="text.secondary"
+      sx={{ lineHeight: 1.8, fontSize: '1.125rem', mb: 2 }}
+    >
+      🌿 <strong>Personal Interests</strong><br />
+      Beyond the screen, I find joy in nurturing my backyard garden and caring for my chickens — activities that
+      bring me mindfulness and calm. Pilates keeps me centered, while volunteering at a local children’s swimming
+      program reflects my belief in community support, learning, and shared growth.
+    </Typography>
+
+    <Typography
+      variant="body1"
+      color="text.secondary"
+      sx={{ lineHeight: 1.8, fontSize: '1.125rem', mb: 3 }}
+    >
+      Curious to see more of my journey and skills? Feel free to check out my CV below.
+    </Typography>
+
+    <Button
       variant="outlined"
       color="primary"
       href="Hawar-cv.pdf"
@@ -281,6 +305,7 @@ Beyond coding, I find joy in nurturing my backyard garden and caring for my chic
     </Button>
   </Box>
 </Box>
+
 
     </Box>
   );
