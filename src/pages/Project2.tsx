@@ -1,16 +1,21 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Typography, Link, List, ListItem, Divider } from '@mui/material';
 import Image1 from '../assets/n-hero.png';
-import Image3 from '../assets/n-logo.png';
-import Image5 from '../assets/n-p.png';
-import Image6 from '../assets/Bird.svg';
-import Image7 from '../assets/n-w.png';
-import {  ListItemIcon, ListItemText } from '@mui/material';
+import Image6 from '../assets/n-p2.png';
+import Image7 from '../assets/n-logo.png';
+import Image8 from '../assets/oldcat.png';
+import Image9 from '../assets/new-cata.png';
+import Image10 from '../assets/old-title.png';
+import Image11 from '../assets/new-title.png';
+import Image12 from '../assets/dis.png';
+import Image13 from '../assets/ex.png';
+import { ListItemIcon, ListItemText } from '@mui/material';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { FaFigma, FaReact } from 'react-icons/fa';
+import { SiAdobe } from 'react-icons/si';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
-
-
-const Home = () => {
+const Project2 = () => {
   return (
     <Box sx={{ px: { xs: 2, sm: 4 }, py: 3, maxWidth: '1100px', margin: 'auto' }}>
       {/* Back Link */}
@@ -22,15 +27,14 @@ const Home = () => {
 
       {/* Hero Section */}
       <Typography variant="h3" component="h1" gutterBottom>
-      Nightingale.io
+        Regenarate Title Creation
       </Typography>
 
       <Typography variant="h6" color="text.secondary" gutterBottom>
-      Angular Development . Design System  · UI Design· Figma
+        Angular Development . Design System · UI Design· Figma
+      </Typography>
 
-</Typography>
-
-      {/* Hero Section */}
+      {/* Hero Image Section */}
       <Box
         sx={{
           position: 'relative',
@@ -43,7 +47,7 @@ const Home = () => {
       >
         <img
           src={Image1}
-          alt="Unicontrol Hero"
+          alt="EcoCycle Hero"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />
         <Box
@@ -58,66 +62,124 @@ const Home = () => {
           }}
         >
           <Typography variant="h3" component="h1" gutterBottom>
-          Nightingale.io 
-         </Typography>
+            Nightengale.io
+          </Typography>
           <Typography variant="h6">
-          Improving Logic and Flow in Audiobook Distribution          </Typography>
+            Improving UX Title ctration Through Intuitive Design
+          </Typography>
         </Box>
       </Box>
 
       <Divider sx={{ mb: 4 }} />
 
-      {/* Role & Challenge */}
-      <Box sx={{ display: 'flex', alignItems:'center', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
+      {/* About the Project */}
+      <Typography variant="h6" gutterBottom>
+        About the Project
+      </Typography>
+      <Typography paragraph>
+        Nightingale is a user-centered project designed to improve digital experiences through thoughtful UX and intuitive UI design.
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        <strong>Technologies used:</strong>
+      </Typography>
+      <Box sx={{ display: 'flex', gap: 3, alignItems: 'center', mb: 4 }}>
+        <FaFigma size={30} color="#F24E1E" title="Figma" />
+        <SiAdobe size={30} color="#FF0000" title="Adobe Suite" />
+        <FaReact size={30} color="#61DAFB" title="React" />
+      </Box>
+
+      <Divider sx={{ my: 4 }} />
+
+      {/* Challenge Section */}
+      <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
         <Box sx={{ flex: 1 }}>
-        <img
-            src={Image3}
-            alt="Project Summary Visual"
+          <img
+            src={Image6}
+            alt="Project Logo"
             style={{ width: '100%', height: 'auto', borderRadius: 12 }}
           />
         </Box>
-        
+
         <Box sx={{ flex: 2 }}>
           <Typography variant="h6" gutterBottom>
-          Challenge:
+            Challenge:
           </Typography>
           <Typography>
-          Nightingale.io's audiobook publishing platform had a complex and inconsistent logic for creating and distributing audiobook titles. This complexity affected both the user experience and the internal workflows of publishers.          </Typography>
-        </Box>
-      </Box>
-      <Divider sx={{ mb: 4 }} />
-      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
-        <Box sx={{ flex: 1 }}>
-        <Box sx={{ flex: 2 }}>
-        <Typography variant="h6" gutterBottom>
-            Role
+            Nightingale.io's audiobook publishing platform had a complex and inconsistent logic for creating and distributing audiobook titles. This complexity affected both the user experience and the internal workflows of publishers.
           </Typography>
-          <Typography>UX Designer & Front-end Contributor (Angular)</Typography>
-        </Box>
-        <img
-            src={Image5}
-            alt="Project Summary Visual"
-            style={{ width: '100%', height: 'auto', borderRadius: 12 }}
-          />
         </Box>
       </Box>
 
       <Divider sx={{ mb: 4 }} />
 
-      {/* Summary Section with Image */}
+     {/* Role Section */}
+<Box
+  sx={{
+    display: 'flex',
+    flexDirection: { xs: 'column', md: 'row' },
+    gap: 4,
+    alignItems: 'center',
+    mb: 6,
+  }}
+>
+  {/* Left: Role Text */}
+  <Box sx={{ flex: 1 }}>
+    <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+      Role
+    </Typography>
+    <Typography
+      variant="subtitle1"
+      sx={{
+        color: 'text.secondary',
+        fontSize: '1rem',
+        lineHeight: 1.6,
+      }}
+    >
+      UX Designer & Front-end Developer (Angular)
+    </Typography>
+  </Box>
+
+  {/* Right: Image */}
+  <Box
+    sx={{
+      flex: 2,
+      width: '100%',
+      maxWidth: 600,
+      borderRadius: 3,
+      overflow: 'hidden',
+      boxShadow: 3,
+    }}
+  >
+    <img
+      src={Image12}
+      alt="Role Visual"
+      style={{
+        display: 'block',
+        width: '100%',
+        height: 'auto',
+        borderRadius: 12,
+      }}
+    />
+  </Box>
+</Box>
+
+
+      <Divider sx={{ mb: 4 }} />
+
+      {/* Summary Section */}
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', md: 'row' }, gap: 4, alignItems: 'center', mb: 5 }}>
         <Box sx={{ flex: 2 }}>
           <Typography variant="h6" gutterBottom>
             Summary
           </Typography>
           <Typography>
-          I led the redesign of a core feature within Nightingale.io, a complex web-based distribution and publishing application. The focus was on creating a streamlined and user-friendly workflow for adding new titles to the platform. This area was previously confusing due to high technical complexity and legacy logic.
+            I led the redesign of a core feature within Nightingale.io, a complex web-based distribution and publishing application. The focus was on creating a streamlined and user-friendly workflow for adding new titles to the platform. This area was previously confusing due to high technical complexity and legacy logic.
           </Typography>
         </Box>
         <Box sx={{ flex: 1 }}>
           <img
-            src={Image6}
-            alt="Project Summary Visual"
+            src={Image13}
+            alt="Summary Illustration"
             style={{ width: '100%', height: 'auto', borderRadius: 12 }}
           />
         </Box>
@@ -125,58 +187,72 @@ const Home = () => {
 
       <Divider sx={{ mb: 4 }} />
 
-      {/* Responsibilities List */}
-      <Box sx={{ display: 'flex', alignItems:'center', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
-
-      <Box sx={{ flex: 2 }}>
-      <Typography variant="h6" gutterBottom>
-          My Responsibilities
+      {/* Before and After Comparison */}
+      <Box sx={{ mb: 5 }}>
+        <Typography variant="h6" gutterBottom>
+          Before & After Comparison
         </Typography>
-<List>
-  <ListItem>
-    <ListItemIcon sx={{ minWidth: 20 }}>
-      <FiberManualRecordIcon fontSize="small" />
-    </ListItemIcon>
-    <ListItemText primary="Created Figma prototypes to demonstrate new interaction paths and logic" />
-  </ListItem>
-  <ListItem>
-    <ListItemIcon sx={{ minWidth: 20 }}>
-      <FiberManualRecordIcon fontSize="small" />
-    </ListItemIcon>
-    <ListItemText primary="Worked closely with Angular developers to implement the redesigned workflow" />
-  </ListItem>
-  <ListItem>
-    <ListItemIcon sx={{ minWidth: 20 }}>
-      <FiberManualRecordIcon fontSize="small" />
-    </ListItemIcon>
-    <ListItemText primary="Ensured UX consistency across components and handled responsive behavior" />
-  </ListItem>
-  <ListItem>
-    <ListItemIcon sx={{ minWidth: 20 }}>
-      <FiberManualRecordIcon fontSize="small" />
-    </ListItemIcon>
-    <ListItemText primary="Designed new workflows and improved UX flow with low- to high-fidelity wireframes" />
-  </ListItem>
-  <ListItem>
-    <ListItemIcon sx={{ minWidth: 20 }}>
-      <FiberManualRecordIcon fontSize="small" />
-    </ListItemIcon>
-    <ListItemText primary="Mapped the existing title-creation process and identified user pain points" />
-  </ListItem>
-</List>
-
+        <BeforeAfterSlider
+          beforeImg={Image8}
+          afterImg={Image9}
+          beforeLabel="Old Design"
+          afterLabel="New Design"
+        />
+         <BeforeAfterSlider
+          beforeImg={Image10}
+          afterImg={Image11}
+          beforeLabel="Old Design"
+          afterLabel="New Design"
+        />
       </Box>
-      <Box sx={{ flex: 1 }}>
-  <img
-    src={Image7}
-    alt="Project Summary Visual"
-    style={{ width: '100%', height: 'auto', borderRadius: 12, border: '2px solid #000' }}
-  />
+
+      <Divider sx={{ mb: 4 }} />
+
+{/* Responsibilities */}
+<Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: 'flex-start', mb: 8 }}>
+  {/* Left: Responsibilities List */}
+  <Box sx={{ flex: 1 }}>
+    <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
+      My Responsibilities
+    </Typography>
+    <List sx={{ pl: 0 }}>
+      {[
+        'Developed interactive Figma prototypes for user testing and stakeholder presentations',
+        'Collaborated with React developers to implement UI components',
+        'Conducted user interviews and mapped user journeys to identify pain points',
+        'Designed responsive layouts with accessibility considerations',
+        'Implemented gamification elements to boost user engagement',
+      ].map((text, index) => (
+        <ListItem key={index} disableGutters>
+          <ListItemIcon sx={{ minWidth: 32 }}>
+            <FiberManualRecordIcon fontSize="small" sx={{ color: '#00ABAB' }} />
+          </ListItemIcon>
+          <ListItemText
+            primaryTypographyProps={{ variant: 'body1', sx: { lineHeight: 1.6 } }}
+            primary={text}
+          />
+        </ListItem>
+      ))}
+    </List>
+  </Box>
+
+  {/* Right: Image */}
+  <Box sx={{ flex: 1, maxWidth: 500 }}>
+    <img
+      src={Image7}
+      alt="Responsibilities Visual"
+      style={{
+        width: '100%',
+        height: 'auto',
+        borderRadius: 12,
+        border: '2px solid #00ABAB',
+      }}
+    />
+  </Box>
 </Box>
 
-        </Box>
     </Box>
   );
 };
 
-export default Home;
+export default Project2;

@@ -2,13 +2,13 @@ import { Box, Typography, List, ListItem, Divider } from '@mui/material';
 import Image3 from '../assets/u.png';
 import Image1 from '../assets/u-prototype.png';
 import Image2 from '../assets/uni.webp';
-
+import { FaFigma, FaReact, FaServer, FaWordpress } from 'react-icons/fa';
+import { SiAdobe } from 'react-icons/si';
 
 const Project4 = () => {
   return (
     <Box sx={{ px: { xs: 2, sm: 4 }, py: 3, maxWidth: '1100px', margin: 'auto' }}>
-      
-      {/* Hero Section */}
+      {/* Page Title */}
       <Typography variant="h3" component="h1" gutterBottom>
         Unicontrol Application
       </Typography>
@@ -17,8 +17,8 @@ const Project4 = () => {
         UI/UX Design · Mobile-First Approach · Wireframing
       </Typography>
 
-   {/* Hero Section */}
-   <Box
+      {/* Hero Image with Overlay Text */}
+      <Box
         sx={{
           position: 'relative',
           width: '100%',
@@ -45,20 +45,36 @@ const Project4 = () => {
           }}
         >
           <Typography variant="h3" component="h1" gutterBottom>
-          Unicontrol Application 
-         </Typography>
+            Unicontrol Application
+          </Typography>
           <Typography variant="h6">
-          Enhancing UX with a Responsive Redesign for Unicontrol          </Typography>
+            Enhancing UX with a Responsive Redesign for Unicontrol
+          </Typography>
         </Box>
       </Box>
 
       <Divider sx={{ mb: 4 }} />
 
+       {/* About the Project */}
+            <Typography variant="h6" gutterBottom>
+              About the Project
+            </Typography>
+            <Typography paragraph>
+              GoToGrowth is a portfolio project showcasing my work as a UI/UX designer and co-founder of a startup focused on helping businesses grow through digital transformation. I worked on everything from brand identity and web content planning to marketing material creation and UX strategy.
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              <strong>Technologies used:</strong>
+            </Typography>
+            <Box sx={{ display: 'flex', gap: 3, alignItems: 'center', mb: 4 }}>
+              <FaReact size={30} color="#61DAFB" title="React" />
+              <FaFigma size={30} color="#F24E1E" title="Figma" />
+              <SiAdobe size={30} color="#FF0000" title="Adobe Suite" />
+           
+            </Box>
 
-      {/* Role & Challenge */}
+      {/* Role & Challenge Section */}
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 5, mb: 5 }}>
-       
-         <Box sx={{ flex: 1 }}>
+        <Box sx={{ flex: 1 }}>
           <img
             src={Image2}
             alt="Project Summary Visual"
@@ -70,9 +86,9 @@ const Project4 = () => {
             Challenge
           </Typography>
           <Typography>
-          The existing Unicontrol application lacked a responsive design, making it difficult for users to navigate on mobile and tablet devices. The challenge was to create a mobile-first wireframe prototype to improve usability across various screen sizes.
-
-In addition to the UX design work, I also contributed to maintaining and enhancing the existing React-based application by implementing new features and improving the overall user interface, ensuring a more consistent and intuitive experience.
+            The existing Unicontrol application lacked a responsive design, making it difficult for users to navigate on mobile and tablet devices. The challenge was to create a mobile-first wireframe prototype to improve usability across various screen sizes.
+            <br /><br />
+            In addition to the UX design work, I also contributed to maintaining and enhancing the existing React-based application by implementing new features and improving the overall user interface, ensuring a more consistent and intuitive experience.
           </Typography>
         </Box>
       </Box>
@@ -94,8 +110,8 @@ In addition to the UX design work, I also contributed to maintaining and enhanci
             Summary
           </Typography>
           <Typography>
-          I designed mobile-first wireframe prototypes to enhance the responsiveness and usability of the Unicontrol website across all devices. Alongside the design improvements, I also maintained and enhanced the existing React application by implementing new features and refining the UI for a more consistent user experience.
-                    </Typography>
+            I designed mobile-first wireframe prototypes to enhance the responsiveness and usability of the Unicontrol website across all devices. Alongside the design improvements, I also maintained and enhanced the existing React application by implementing new features and refining the UI for a more consistent user experience.
+          </Typography>
         </Box>
         <Box sx={{ flex: 1 }}>
           <img
@@ -107,8 +123,9 @@ In addition to the UX design work, I also contributed to maintaining and enhanci
       </Box>
 
       <Divider sx={{ mb: 4 }} />
-        {/* Hero Section */}
-        <Box
+
+      {/* Role Section with Image */}
+      <Box
         sx={{
           position: 'relative',
           width: '100%',
@@ -118,7 +135,7 @@ In addition to the UX design work, I also contributed to maintaining and enhanci
           borderRadius: 2,
         }}
       >
-         <Box sx={{ flex: 1 }}>
+        <Box sx={{ position: 'absolute', top: 20, left: 20, zIndex: 10, color: 'white' }}>
           <Typography variant="h6" gutterBottom>
             Role
           </Typography>
@@ -126,10 +143,9 @@ In addition to the UX design work, I also contributed to maintaining and enhanci
         </Box>
         <img
           src={Image1}
-          alt="Unicontrol Hero"
+          alt="Unicontrol Prototype"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />
-      
       </Box>
 
       <Divider sx={{ mb: 4 }} />

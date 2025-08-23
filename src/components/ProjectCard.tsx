@@ -8,7 +8,7 @@ type ProjectCardProps = {
   link: string;
   shape?: string;
   image?: string;
-  description?: string; // consider renaming to "description"
+  description?: string; 
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({

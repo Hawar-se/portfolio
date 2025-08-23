@@ -9,12 +9,14 @@ import {
 } from '@mui/material';
 import { HashLink as Link } from 'react-router-hash-link';
 import meImage from '../assets/me.jpg';
-import Image4 from '../assets/hero-rose.png';
 import Image1 from '../assets/Gotogrowth.png';
 import Image2 from '../assets/n-logo.png';
 import Image3 from '../assets/u.png'
+import Image4 from '../assets/heroimage.png';
 import Image5 from '../assets/react.png'
 import Image6 from '../assets/rosse.png'
+import Image7 from '../assets/ai.svg';
+import Image8 from '../assets/q.jpg'
 import ProjectCard from '../components/ProjectCard';
 import Grid from '@mui/material/Grid';
 import { useEffect } from 'react';
@@ -50,13 +52,13 @@ const Home = () => {
       title: 'Unicontrol Application',
       image: Image3,
       link: '/project4',
-      description: 'GoToGrowth website and Brand Identity',
+      description: 'Enhancing UX with a Responsive Redesign for Unicontrol',
     },
      {
       title: 'Skill Refresh Projects',
       image: Image5,
       link: '/project3',
-      description: 'GoToGrowth website and Brand Identity',
+      description: 'JavaScript & React Practice Projects',
     },
     
       {
@@ -64,6 +66,18 @@ const Home = () => {
         image: Image6,
         link: '/project5',
         description: 'A&G Logo Design – a bold and minimal brand identity project in progress.',
+      },
+      {
+        title: 'AI',
+        image: Image7,
+        link: '/project6',
+        description: 'AI Color Palette Generator',
+      },
+      {
+        title: 'go',
+        image: Image7,
+        link: '/project7',
+        description: 'New Project',
       },
     ];
       
@@ -75,11 +89,12 @@ const Home = () => {
   <Box
     sx={{
       maxWidth: 1200,
+      height:'100%',
       mx: 'auto',
       mb: 10,
-      px: { xs: 3, md: 6 },
-      py: { xs: 4, md: 6 },
-      borderRadius: 4,
+      px: { xs: 3, md: 10 },
+      py: { xs: 4, md: 2 },
+      borderRadius: 2,
       display: 'flex',
       flexDirection: { xs: 'column', md: 'row' },
       alignItems: 'center',
@@ -94,39 +109,18 @@ const Home = () => {
     <Box
       sx={{
         position: 'absolute',
-        top: -100,
-        left: -100,
         width: 400,
         height: 400,
-        bgcolor: '#90caf9',
-        borderRadius: '50%',
-        zIndex: 0,
-        filter: 'blur(150px)',
-        animation: 'pulse 6s ease-in-out infinite',
-        '@keyframes pulse': {
-          '0%': { transform: 'scale(1)', opacity: 0.4 },
-          '50%': { transform: 'scale(1.1)', opacity: 0.6 },
-          '100%': { transform: 'scale(1)', opacity: 0.4 },
-        },
+        borderRadius: '10%',
+        zIndex: 0, 
       }}
     />
 
-    {/* Optional: overlay texture pattern */}
-    <Box
-      sx={{
-        position: 'absolute',
-        inset: 0,
-        backgroundImage: 'url("/path-to-subtle-texture.png")',
-        opacity: 0.05,
-        zIndex: 0,
-      }}
-    />
 
     {/* Text Section */}
     <Box sx={{ width: { xs: '100%', md: '50%' }, zIndex: 1 }}>
       <Typography
-        variant={isMdUp ? 'h3' : 'h4'}
-        fontWeight="bold"
+        variant={isMdUp ? 'h2' : 'h3'}
         gutterBottom
         sx={{
           letterSpacing: '0.05em',
@@ -135,8 +129,11 @@ const Home = () => {
           fontFamily: '"Inter", sans-serif',
         }}
       >
-        Hi! I’m Hawar, I turn ideas into interactive, responsive websites people love to use.
+        Hi! I’m Hawar, Graphic & UX Designer with Frontend Development Skills
+
+
       </Typography>
+
 
       <Typography
         variant="body1"
@@ -148,10 +145,7 @@ const Home = () => {
           fontFamily: '"Inter", sans-serif',
         }}
       >
-        UI/UX-focused front-end developer passionate about clean code and clean design.
-        I blend technical expertise with design intuition to craft user-centered web experiences.
-        Let’s build something that not only works great, but feels great to use.
-      </Typography>
+UI/UX Designer & Frontend Developer, crafting intuitive, accessible UIs and exploring the future of design with tools like AI-powered palette generators        </Typography>
 
       <Link smooth to="/#about" style={{ textDecoration: 'none' }}>
         <Button
@@ -167,22 +161,41 @@ const Home = () => {
             textTransform: 'none',
           }}
         >
-          Explore My Story
+Contact Me
         </Button>
       </Link>
+      <Link smooth to="project6" style={{ textDecoration: 'none' }}>
+  <Button
+    variant="outlined"
+    size="large"
+    sx={{
+      px: 5,
+      py: 1.75,
+      fontWeight: 'bold',
+      fontSize: { xs: '0.875rem', md: '1rem' },
+      borderRadius: 999,
+      boxShadow: 2,
+      textTransform: 'none',
+      ml: 2,
+    }}
+  >
+        Try AI Color Palette Generator
+  </Button>
+</Link>
+
     </Box>
 
     {/* Profile Image */}
     <Box
       component="img"
-      src={Image4}
+      src={meImage}
       alt="Hawar"
       sx={{
         width: { xs: '100%', md: '50%' },
-        maxWidth: 360,
-        borderRadius: '50%',
+        maxWidth: 350,
+        borderRadius:'10%',
         objectFit: 'cover',
-        boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
+        boxShadow: '0 10px 40px rgba(248, 185, 185, 0.1)',
         transition: 'transform 0.4s ease-in-out',
         '&:hover': {
           transform: 'scale(1.05)',
@@ -237,15 +250,16 @@ const Home = () => {
   {/* Image Section */}
   <Box
     component="img"
-    src={meImage}
+    src={Image}
     alt="Hawar"
     sx={{
-      width: { xs: '100%', md: '50%' },
+      width: { xs: '100%', md: '40%' },
       maxHeight: 1000,
       borderRadius: 2,
       objectFit: 'cover',
     }}
   />
+  
 
   {/* Text Section */}
   <Box sx={{ width: { xs: '100%', md: '50%' } }}>
@@ -265,34 +279,111 @@ const Home = () => {
       My design approach is rooted in <strong>clarity, accessibility, and simplicity</strong>. I believe that
       great digital products are not only functional but emotionally engaging — they anticipate user needs
       and create a sense of flow.
-      <br /><br />
-      What sets me apart is my <strong>blend of design sensibility and technical skill</strong>. I bring a collaborative
-      mindset to every project, whether I’m wireframing an idea, prototyping a flow, or coding the final experience.
-      I’m deeply committed to continuous learning and love transforming abstract ideas into real, meaningful products.
-      <br /><br />
-      Whether you’re launching a fresh startup or refreshing an established brand, I’m here to help bring your vision
+      freshing an established brand, I’m here to help bring your vision
       to life — beautifully and intuitively.
     </Typography>
+
+    
+  </Box>
+  
+</Box>
+
+<Box
+  id="about"
+  sx={{
+    maxWidth: 1200,
+    mx: 'auto',
+    mb: 10,
+    px: 3,
+    py: 6,
+    bgcolor: 'background.paper',
+    borderRadius: 2,
+    display: 'flex',
+    flexDirection: { xs: 'column', md: 'row' },
+    alignItems: 'center',
+    gap: 4,
+  }}
+>
+
+  
+
+  {/* Text Section */}
+  <Box sx={{ width: { xs: '100%', md: '50%' } }}>
+  
 
     <Typography
       variant="body1"
       color="text.secondary"
       sx={{ lineHeight: 1.8, fontSize: '1.125rem', mb: 2 }}
     >
-      🌿 <strong>Personal Interests</strong><br />
-      Beyond the screen, I find joy in nurturing my backyard garden and caring for my chickens — activities that
-      bring me mindfulness and calm. Pilates keeps me centered, while volunteering at a local children’s swimming
-      program reflects my belief in community support, learning, and shared growth.
+      <br /><br />
+      What sets me apart is my <strong>blend of design sensibility and technical skill</strong>. I bring a collaborative
+      mindset to every project, whether I’m wireframing an idea, prototyping a flow, or coding the final experience.
+      I’m deeply committed to continuous learning and love transforming abstract ideas into real, meaningful products.
+      <br /><br />
+      Whether you’re launching a fresh startup or re
     </Typography>
+
+    
+  </Box>
+    {/* Image Section */}
+    <Box
+    component="img"
+    src={Image8}
+    alt="Hawar"
+    sx={{
+      width: { xs: '100%', md: '40%' },
+      maxHeight: 1000,
+      borderRadius: 2,
+      objectFit: 'cover',
+    }}
+  />
+</Box>
+
+
+    <Box
+  id="about"
+  sx={{
+    maxWidth: 1200,
+    mx: 'auto',
+    mb: 10,
+    px: 3,
+    py: 6,
+    bgcolor: 'background.paper',
+    borderRadius: 2,
+    display: 'flex',
+    flexDirection: { xs: 'column', md: 'row' },
+    alignItems: 'center',
+    gap: 4,
+  }}
+>
+  {/* Image Section */}
+  <Box
+    component="img"
+    src={Image4}
+    alt="Hawar"
+    sx={{
+      width: { xs: '100%', md: '40%' },
+      maxHeight: 1000,
+      borderRadius: 2,
+      objectFit: 'cover',
+    }}
+  />
+  
+  {/* Text Section */}
+  <Box sx={{ width: { xs: '100%', md: '50%' } }}>
+    <Typography variant="h4" fontWeight="bold" gutterBottom>
+    Personal Interests    </Typography>
 
     <Typography
       variant="body1"
       color="text.secondary"
-      sx={{ lineHeight: 1.8, fontSize: '1.125rem', mb: 3 }}
-    >
-      Curious to see more of my journey and skills? Feel free to check out my CV below.
+      sx={{ lineHeight: 1.8, fontSize: '1.125rem', mb: 2 }}
+    >Beyond the screen, I find joy in nurturing my backyard garden and caring for my chickens, activities that
+    bring me mindfulness and calm. Pilates keeps me centered, while volunteering at a local children’s swimming
+    program reflects my belief in community support, learning, and shared growth.
+  
     </Typography>
-
     <Button
       variant="outlined"
       color="primary"
@@ -303,11 +394,14 @@ const Home = () => {
     >
       Download CV
     </Button>
+    
   </Box>
+  
 </Box>
 
 
     </Box>
+    
   );
 };
 
