@@ -1,5 +1,5 @@
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, Typography, Link, Divider } from '@mui/material';
+import { Box, Typography, Link, Divider, Chip } from '@mui/material';
 import { FaFigma, FaReact } from 'react-icons/fa';
 import { SiAdobe } from 'react-icons/si';
 
@@ -35,6 +35,8 @@ const ProjectGibotech = () => {
       <Typography variant="h6" color="text.secondary" gutterBottom>
         UX/UI Design · Figma · Adobe Suite
       </Typography>
+      <Chip label="In Progress" color="warning" variant="outlined" sx={{ mb: 3 }} />
+
       <Box sx={{ position: 'relative', width: '100%', height: { xs: 400, md: 600 }, mb: 4, overflow: 'hidden', borderRadius: 2 }}>
         <img src={HeroImg} alt="Project Hero" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </Box>

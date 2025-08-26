@@ -18,6 +18,7 @@ import Image6 from '../assets/rosse.png'
 import Image7 from '../assets/ai.svg';
 import Image8 from '../assets/q.jpg'
 import Image9 from '../assets/team-Bar.jpeg'
+import Image10 from '../assets/Rose.png'
 import ProjectCard from '../components/ProjectCard';
 import Grid from '@mui/material/Grid';
 import { useEffect } from 'react';
@@ -76,7 +77,7 @@ const Home = () => {
       },
       {
         title: 'Gibotech',
-        image: Image7,
+        image: Image10,
         link: '/project7',
         description: 'UX in Robotics Software',
       },
