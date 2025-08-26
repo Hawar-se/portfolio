@@ -17,6 +17,7 @@ import Image5 from '../assets/react.png'
 import Image6 from '../assets/rosse.png'
 import Image7 from '../assets/ai.svg';
 import Image8 from '../assets/q.jpg'
+import Image9 from '../assets/team-Bar.jpeg'
 import ProjectCard from '../components/ProjectCard';
 import Grid from '@mui/material/Grid';
 import { useEffect } from 'react';
@@ -74,10 +75,10 @@ const Home = () => {
         description: 'AI Color Palette Generator',
       },
       {
-        title: 'go',
+        title: 'Gibotech',
         image: Image7,
         link: '/project7',
-        description: 'New Project',
+        description: 'UX in Robotics Software',
       },
     ];
       
@@ -250,7 +251,7 @@ Contact Me
   {/* Image Section */}
   <Box
     component="img"
-    src={Image}
+    src={Image9}
     alt="Hawar"
     sx={{
       width: { xs: '100%', md: '40%' },

@@ -1,9 +1,18 @@
-import { Box, Typography, Divider, Chip } from '@mui/material';
-import Image2 from '../assets/A&G-Logo.png';
+import { Box, Typography, Divider, Chip, Link } from '@mui/material';
+import Image2 from '../assets/A&G.png';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 const Project5 = () => {
   return (
     <Box sx={{ px: { xs: 2, sm: 4 }, py: 3, maxWidth: '1100px', margin: 'auto' }}>
+      {/* Back Link */}
+      <Box sx={{ mb: 3 }}>
+        <Link component={RouterLink} to="/" underline="none" color="primary">
+          ← Back to Home
+        </Link>
+      </Box>
+
       {/* Title & Status */}
       <Typography variant="h3" component="h1" gutterBottom>
         A&G English and More -Logo Design

@@ -1,11 +1,18 @@
-import { Box, Typography, Divider, Button } from '@mui/material';
+import { Box, Typography, Divider, Button, Link } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import Image1 from '../assets/react.png';
 import Image3 from '../assets/code-hero.jpg';
 
 const Project5 = () => {
   return (
+    
     <Box sx={{ px: { xs: 2, sm: 4 }, py: 3, maxWidth: '1100px', margin: 'auto' }}>
-      {/* Page Title */}
+        {/* Back Link */}
+            <Box sx={{ mb: 3 }}>
+              <Link component={RouterLink} to="/" underline="none" color="primary">
+                ← Back to Home
+              </Link>
+            </Box>
       <Typography variant="h3" component="h1" gutterBottom>
         JavaScript & React Practice Projects
       </Typography>
