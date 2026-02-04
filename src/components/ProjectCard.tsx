@@ -1,14 +1,14 @@
 import React from 'react';
-import { Box, Typography, Link as MuiLink, Button } from '@mui/material';
-import projectImg1 from '../assets/Gotogrowth.png';
+import { Box, Typography, Button } from '@mui/material';
 import { ArrowForward } from '@mui/icons-material';
+import { Link as RouterLink } from 'react-router-dom';
+import projectImg1 from '../assets/Gotogrowth.png';
 
 type ProjectCardProps = {
   title: string;
-  link: string;
-  shape?: string;
+  link: string; // example: "project1"
   image?: string;
-  description?: string; 
+  description?: string;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -18,72 +18,70 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
 }) => {
   return (
-    <MuiLink
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      underline="none"
+    <Box
       sx={{
-        display: 'block',
-        textDecoration: 'none',
-        width: 550,
+        width: {
+          xs: 320,   // mobile
+          sm: 360,   // small tablets
+          md: 400,   // desktop
+          lg: 420,   // large screens
+        },
         borderRadius: 2,
         overflow: 'hidden',
         boxShadow: 3,
-        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-        '&:hover': {
-          transform: 'translateY(-5px)',
-          boxShadow: 6,
-        },
         bgcolor: 'background.paper',
         color: 'text.primary',
-        cursor: 'pointer',
         mx: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        '@media (hover: hover)': {
+          '&:hover': {
+            transform: 'translateY(-6px)',
+            boxShadow: 6,
+          },
+        },
       }}
     >
-      {/* Header section with logo and title */}
-      <Box sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
-        {image && (
-          <Box
-            component="img"
-            src={image}
-            alt={`${title} logo`}
-            sx={{
-              width: 40,
-              height: 40,
-              objectFit: 'contain',
-              borderRadius: 1,
-              mr: 2,
-            }}
-          />
-        )}
-        <Typography variant="h6" component="h3">
-          {title}
-        </Typography>
+      {/* Header */}
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, p: 2 }}>
+        <Box
+          component="img"
+          src={image}
+          alt={title}
+          sx={{
+            width: 40,
+            height: 40,
+            objectFit: 'contain',
+            borderRadius: 1,
+            flexShrink: 0,
+          }}
+        />
+        <Typography variant="h6">{title}</Typography>
       </Box>
 
-      {/* Description section */}
-      <Box sx={{ px: 2 }}>
-        {description && (
+      {/* Description */}
+      {description && (
+        <Box sx={{ px: 2, flexGrow: 1 }}>
           <Typography variant="body2" color="text.secondary">
             {description}
           </Typography>
-        )}
-      </Box>
+        </Box>
+      )}
 
-      {/* Button */}
-      <Box sx={{ textAlign: 'right', p: 2 }}>
+      {/* Action */}
+      <Box sx={{ p: 2 }}>
         <Button
+          component={RouterLink}
+          to={`/${link}`}
           variant="outlined"
           endIcon={<ArrowForward />}
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
+          fullWidth
         >
           View Project
         </Button>
       </Box>
-    </MuiLink>
+    </Box>
   );
 };
 
